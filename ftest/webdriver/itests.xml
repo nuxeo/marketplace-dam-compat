@@ -17,7 +17,7 @@
   <target name="prepare-environment"
           depends="_init,prepare-db,prepare-tomcat,prepare-jboss">
     <copy todir="${out.dir}">
-      <artifact:resolveFile key="org.nuxeo.marketplace.dam:marketplace-dam::zip" />
+      <artifact:resolveFile key="org.nuxeo.marketplace.dam:marketplace-dam-compat::zip" />
     </copy>
   </target>
 
