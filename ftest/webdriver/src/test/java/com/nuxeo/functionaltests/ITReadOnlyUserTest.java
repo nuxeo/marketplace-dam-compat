@@ -46,7 +46,7 @@ public class ITReadOnlyUserTest extends AbstractDAMTest {
 
         login("bender", "test");
         // make sure navigation to a given domain is done, see NXP-13436
-        Locator.findElementWithTimeout(By.linkText("DOCUMENT MANAGEMENT")).click();
+        Locator.findElementWithTimeout(By.linkText("WORKSPACE")).click();
         Locator.findElementWithTimeout(By.linkText("Default domain")).click();
         damPage = getDAMPage();
         SearchResultsFragment searchResultsFragment = damPage.getSearchResultsFragment();

@@ -31,6 +31,8 @@ import org.openqa.selenium.By;
  */
 public class ITAssetPageTest extends AbstractDAMTest {
 
+    public static final String WORKSPACE_VIEW = "Workspace view";
+
     @Test
     public void navigateToDM() throws Exception {
         login("leela", "test");
@@ -45,7 +47,7 @@ public class ITAssetPageTest extends AbstractDAMTest {
         searchResultsFragment.selectAsset("One File");
 
         AssetViewFragment assetViewFragment = damPage.getAssetViewFragment();
-        assetViewFragment.clickOnAction("Document Management view");
+        assetViewFragment.clickOnAction(WORKSPACE_VIEW);
 
         DocumentBasePage page = asPage(DocumentBasePage.class);
         page.checkDocTitle("One File");
@@ -55,7 +57,7 @@ public class ITAssetPageTest extends AbstractDAMTest {
         searchResultsFragment.selectAsset("Another File");
 
         assetViewFragment = damPage.getAssetViewFragment();
-        assetViewFragment.clickOnAction("Document Management view");
+        assetViewFragment.clickOnAction(WORKSPACE_VIEW);
 
         page = asPage(DocumentBasePage.class);
         page.checkDocTitle("Another File");
@@ -70,7 +72,7 @@ public class ITAssetPageTest extends AbstractDAMTest {
                 "One File description", "Leela", "1/1/2012");
 
         AssetViewFragment assetViewFragment = damPage.getAssetViewFragment();
-        assetViewFragment.clickOnAction("Document Management view");
+        assetViewFragment.clickOnAction(WORKSPACE_VIEW);
 
         DocumentBasePage page = asPage(DocumentBasePage.class);
         page.checkDocTitle("One File");
