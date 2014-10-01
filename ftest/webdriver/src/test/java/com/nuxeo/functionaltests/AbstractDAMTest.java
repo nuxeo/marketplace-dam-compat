@@ -79,7 +79,7 @@ public abstract class AbstractDAMTest extends AbstractTest {
                 driver.findElement(By.linkText("Asset Library")).click();
                 DocumentBasePage assetLibraryPage = dm.asPage(DocumentBasePage.class);
                 AccessRightsSubPage rightsPage = assetLibraryPage.getManageTab().getAccessRightsSubTab();
-                rightsPage.addPermissionForUser(username, grantPermission, true);
+                rightsPage.grantPermissionForUser(grantPermission, username);
             }
         } finally {
             logout();
