@@ -96,12 +96,12 @@ public class ITAssetViewTest extends AbstractDAMTest {
 
         LayoutElement layout = new LayoutElement(driver,
                 "nxl_gridDamLayout:nxw_damAssetViewMetadata_toggledForm");
-        layout.getWidget("nxl_heading_1:nxw_title_1").setInputValue("New title");
-        layout.getWidget("nxl_heading_1:nxw_description_1").setInputValue(
+        layout.getWidget("nxl_heading_2:nxw_title_2").setInputValue("New title");
+        layout.getWidget("nxl_heading_2:nxw_description_2").setInputValue(
                 "New description");
-        layout.getWidget("nxl_dam_common_3:nxw_damc_author_6").setInputValue(
+        layout.getWidget("nxl_dam_common_4:nxw_damc_author_7").setInputValue(
                 "New author");
-        layout.getWidget("nxl_dam_common_3:nxw_damc_authoringDate_6InputDate").setInputValue(
+        layout.getWidget("nxl_dam_common_4:nxw_damc_authoringDate_7InputDate").setInputValue(
                 "10/10/2010");
         metadataBox.save();
 
@@ -135,7 +135,7 @@ public class ITAssetViewTest extends AbstractDAMTest {
         ipBox.checkTextToBeNotPresent("New holder");
         ipBox.edit();
 
-        WebElement copyrightHolderInput = driver.findElement(By.id("nxl_gridDamLayout:nxw_damAssetViewIpRights_toggledForm:nxl_ip_rights:nxw_copyright_holder"));
+        WebElement copyrightHolderInput = driver.findElement(By.id("nxl_gridDamLayout:nxw_damAssetViewIpRights_toggledForm:nxl_ip_rights_1:nxw_copyright_holder_1"));
         copyrightHolderInput.clear();
         copyrightHolderInput.sendKeys("New holder");
         ipBox.save();
