@@ -24,7 +24,8 @@
     <copy todir="${outdir}/marketplace">
       <fileset dir="src/main/resources" />
       <filterset>
-        <filter token="VERSION" value="${nuxeo.distribution.version}" />
+        <filter token="VERSION" value="${maven.project.version}" />
+        <filter token="DISTRIB_VERSION" value="${nuxeo.distribution.version}" />
       </filterset>
     </copy>
     <copy file="${outdir}/artifacts-dam-compat.properties"
@@ -128,9 +129,9 @@
       </filterset>
     </copy>
 
-    <zip destfile="${outdir}/${maven.project.artifactId}-${nuxeo.distribution.version}.zip"
-         basedir="${outdir}/marketplace" />
-    <artifact:attach file="${outdir}/${maven.project.artifactId}-${nuxeo.distribution.version}.zip"
-                     type="zip" />
+    <zip destfile="${outdir}/${maven.project.artifactId}-${maven.project.version}.zip"
+      basedir="${outdir}/marketplace" />
+    <artifact:attach file="${outdir}/${maven.project.artifactId}-${maven.project.version}.zip"
+      type="zip" />
   </target>
 </project>
