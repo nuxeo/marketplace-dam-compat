@@ -61,7 +61,7 @@ public class AssetViewFragment extends WebFragmentImpl {
     public FoldableBoxFragment getFoldableBox(String title, boolean isAjax) {
         List<WebElement> elements = element.findElements(By.className("foldableBox"));
         for (WebElement ele : elements) {
-            if (ele.findElement(By.tagName("h3")).getText().contains(title)) {
+            if (ele.findElement(By.tagName("div")).getText().contains(title)) {
                 FoldableBoxFragment foldableBox = getWebFragment(
                         ele.findElement(By.xpath("..")),
                         FoldableBoxFragment.class);

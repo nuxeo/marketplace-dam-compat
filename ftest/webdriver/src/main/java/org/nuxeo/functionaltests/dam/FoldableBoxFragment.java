@@ -55,7 +55,7 @@ public class FoldableBoxFragment extends WebFragmentImpl {
             element.findElement(
                     By.xpath("//div[@id='"
                             + id
-                            + "']//h3[contains(@class, 'folded') and not(contains(@class, 'unfolded'))]/a[@class='foldableHeaderLink']")).click();
+                            + "']//div[contains(@class, 'folded') and not(contains(@class, 'unfolded'))]/a[@class='foldableHeaderLink']")).click();
         } catch (NoSuchElementException e) {
             // do nothing
         }
@@ -66,7 +66,7 @@ public class FoldableBoxFragment extends WebFragmentImpl {
             element.findElement(
                     By.xpath("//div[@id='"
                             + id
-                            + "']//h3[contains(@class, 'unfolded')]/a[@class='foldableHeaderLink']")).click();
+                            + "']//div[contains(@class, 'unfolded')]/a[@class='foldableHeaderLink']")).click();
         } catch (NoSuchElementException e) {
             // do nothing
         }
@@ -74,7 +74,7 @@ public class FoldableBoxFragment extends WebFragmentImpl {
 
     public void edit() {
         element.findElement(By.linkText("Edit")).click();
-        Locator.waitUntilElementPresent(By.xpath("//h3/a[text()='Cancel']"));
+        Locator.waitUntilElementPresent(By.xpath("//div/a[text()='Cancel']"));
         refreshElement();
         waitUntilElementPresent(By.className("buttonsGadget"));
     }
