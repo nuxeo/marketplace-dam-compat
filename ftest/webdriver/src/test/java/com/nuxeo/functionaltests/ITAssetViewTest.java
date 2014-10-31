@@ -29,7 +29,6 @@ import org.nuxeo.functionaltests.dam.SearchResultsFragment;
 import org.nuxeo.functionaltests.forms.LayoutElement;
 import org.nuxeo.functionaltests.fragment.WebFragment;
 import org.openqa.selenium.By;
-import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.TimeoutException;
 import org.openqa.selenium.WebDriver;
@@ -159,10 +158,12 @@ public class ITAssetViewTest extends AbstractDAMTest {
         ipBox.open();
         ipBox.waitForTextToBePresent("New holder");
 
-        // avoid triggering the "save" popup (FIXME: it should not be triggered
-        // here anyway)
-        ((JavascriptExecutor) driver).executeScript("window.onbeforeunload = function(e){};");
-        ((JavascriptExecutor) driver).executeScript("jQuery(window).unbind('unload');");
+        // avoid triggering the "save" popup (fixed by NXP-15126: it should not
+        // be triggered here anymore)
+        // ((JavascriptExecutor)
+        // driver).executeScript("window.onbeforeunload = function(e){};");
+        // ((JavascriptExecutor)
+        // driver).executeScript("jQuery(window).unbind('unload');");
         logout();
     }
 }
